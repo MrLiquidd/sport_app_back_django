@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d9ba7f87-6c47-4e49-93e1-029aed35cdc5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sportBackDjangoRest.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/apisport/routers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/event/api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/event/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/event/migrations/0002_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/event/migrations/0003_event_event_type.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/event/migrations/0004_event_price.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/event/migrations/0005_alter_event_title.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/event/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/event/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/media/images/Default_pfp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/media/images/IMG_4928.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/media/images/images.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/user/api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/user/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/user/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/user/migrations/0002_userinfo_age.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/user/migrations/0003_userinfo_city.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/user/migrations/0004_alter_userinfo_city.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/user/migrations/0005_remove_useraddress_full_address_remove_userinfo_city.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/user/migrations/0006_useraddress_full_address_userinfo_city.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/user/migrations/0007_remove_userinfo_age_user_born_date.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/user/migrations/0008_user_gender_userinfo_age_alter_user_born_date_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/user/migrations/0009_remove_user_gender.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/user/migrations/0010_user_gender.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/user/migrations/0011_alter_user_born_date_alter_user_gender_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/user/migrations/0012_alter_user_born_date.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/user/migrations/0013_alter_user_born_date.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/user/migrations/0014_alter_user_born_date.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/user/migrations/0015_alter_userinfo_user_id.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/user/migrations/0016_alter_userinfo_deleted.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/user/migrations/0017_alter_userinfo_photo_id.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/user/permissions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/user/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/user/signals.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/user/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/user/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/utily/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/utily/migrations/0002_alter_address_flat_number.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/utily/migrations/0003_alter_file_photo_alter_file_specs.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/utily/migrations/0004_alter_file_photo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/utily/migrations/0005_alter_file_photo_alter_file_specs.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/utily/serializers.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2fozHdfDZRSzLJnHnM2xpXCpVLF" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "run.code.analysis.last.selected.profile": "aDefault",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/apisport/media" />
+      <recent name="$PROJECT_DIR$/apisport/photo" />
+      <recent name="$PROJECT_DIR$/apisport/user" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-0509580d9d50-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.14494.241" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d9ba7f87-6c47-4e49-93e1-029aed35cdc5" name="Changes" comment="" />
+      <created>1714482131574</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1714482131574</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
