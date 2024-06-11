@@ -11,8 +11,8 @@ class Event(models.Model):
     GAME = 'Игры'
 
     EVENT_TYPE_CHOICES = [
-        (TRAINING, 'Тренировки'),
-        (GAME, 'Игры'),
+        (TRAINING, 'Тренировка'),
+        (GAME, 'Игра'),
     ]
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     title = models.CharField(max_length=100)
@@ -32,6 +32,36 @@ class Event(models.Model):
         return self.title
 
 
+class Visit(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    user_id = models.ForeignKey(User, related_name='user_visit', on_delete=models.PROTECT)
+    event_id = models.ForeignKey(Event, related_name='event_visit', on_delete=models.PROTECT)
+    status = models.IntegerField()
+    create_date = models.DateTimeField(auto_now_add=True)
+    deleted = models.BooleanField()
+
+    class Meta:
+        # Уникальный индекс для связки user_id и event_id
+        unique_together = ('user_id', 'event_id')
+
+    def __str__(self):
+        return f'{self.event_id}'
+
+
+class UserFavoriteEvents(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    user_id = models.ForeignKey(User, related_name='user_favorite', on_delete=models.PROTECT)
+    event_id = models.ForeignKey(Event, related_name='event_favorite', on_delete=models.PROTECT)
+    create_date = models.DateTimeField(auto_now_add=True)
+    deleted = models.BooleanField()
+
+    class Meta:
+        unique_together = ('user_id', 'event_id')
+
+    def __str__(self):
+        return f'{self.user_id}'
+
+
 class EventAddress(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     event_id = models.ForeignKey(Event, related_name='event_event_address', on_delete=models.PROTECT)
@@ -42,18 +72,3 @@ class EventAddress(models.Model):
 
     def __str__(self):
         return self.full_address
-
-
-class Visit(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    user_id = models.ForeignKey(User, related_name='user_visit', on_delete=models.PROTECT)
-    event_id = models.ForeignKey(Event, related_name='event_visit', on_delete=models.PROTECT)
-    status = models.IntegerField()
-    create_date = models.DateTimeField(auto_now_add=True)
-    deleted = models.BooleanField()
-
-    def __str__(self):
-        return self.event_id
-
-
-

@@ -3,8 +3,6 @@ import uuid
 from django.contrib.auth.models import PermissionsMixin, UserManager
 from django.db import models
 from django.utils import timezone
-import pgtrigger
-
 from utily.models import File, Address, City
 from django.contrib.auth.base_user import AbstractBaseUser
 
@@ -48,11 +46,11 @@ class User(AbstractBaseUser, PermissionsMixin):
     create_date = models.DateTimeField(default=timezone.now)
     last_login = models.DateTimeField(blank=True, null=True)
 
-    is_staff = models.BooleanField(default=True)  # must needed, otherwise you won't be able to loginto django-admin.
-    is_active = models.BooleanField(default=True)  # must needed, otherwise you won't be able to loginto django-admin.
-    is_superuser = models.BooleanField(default=False)  # this field we inherit from PermissionsMixin.
+    is_staff = models.BooleanField(default=True)
+    is_active = models.BooleanField(default=True)
+    is_superuser = models.BooleanField(default=False)
 
-    deleted = models.BooleanField(default=False)
+    is_deleted = models.BooleanField(default=False)
 
     objects = CustomUserManager()
 
@@ -95,6 +93,7 @@ class UserAddress(models.Model):
 
     def __str__(self):
         return self.full_address
+
 
 
 class Friends(models.Model):

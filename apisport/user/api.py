@@ -19,14 +19,6 @@ def me(request):
         })
 
 
-# @api_view(['GET'])
-# def user_info(request, user_id):
-#     user_info = UserInfo.objects.get(user_id=user_id)
-#     serializer_class = UserInfoSerializer(user_info, many=False)
-#     print(serializer_class.data)
-#     return JsonResponse(serializer_class.data)
-#
-
 @api_view(['POST'])
 @authentication_classes([])
 @permission_classes([])

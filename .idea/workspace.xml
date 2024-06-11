@@ -4,57 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d9ba7f87-6c47-4e49-93e1-029aed35cdc5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sportBackDjangoRest.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/apisport/routers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/db.sqlite3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/event/api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/event/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/event/migrations/0002_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/event/migrations/0003_event_event_type.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/event/migrations/0004_event_price.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/event/migrations/0005_alter_event_title.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/event/serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/event/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/media/images/Default_pfp.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/media/images/IMG_4928.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/media/images/images.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/user/api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/user/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/user/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/user/migrations/0002_userinfo_age.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/user/migrations/0003_userinfo_city.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/user/migrations/0004_alter_userinfo_city.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/user/migrations/0005_remove_useraddress_full_address_remove_userinfo_city.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/user/migrations/0006_useraddress_full_address_userinfo_city.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/user/migrations/0007_remove_userinfo_age_user_born_date.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/user/migrations/0008_user_gender_userinfo_age_alter_user_born_date_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/user/migrations/0009_remove_user_gender.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/user/migrations/0010_user_gender.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/user/migrations/0011_alter_user_born_date_alter_user_gender_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/user/migrations/0012_alter_user_born_date.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/user/migrations/0013_alter_user_born_date.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/user/migrations/0014_alter_user_born_date.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/user/migrations/0015_alter_userinfo_user_id.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/user/migrations/0016_alter_userinfo_deleted.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/user/migrations/0017_alter_userinfo_photo_id.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/user/permissions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/user/serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/user/signals.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/user/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/user/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/utily/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/utily/migrations/0002_alter_address_flat_number.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/utily/migrations/0003_alter_file_photo_alter_file_specs.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/utily/migrations/0004_alter_file_photo.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/utily/migrations/0005_alter_file_photo_alter_file_specs.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/utily/serializers.py" afterDir="false" />
+    <list default="true" id="d9ba7f87-6c47-4e49-93e1-029aed35cdc5" name="Changes" comment="commit message">
+      <change afterPath="$PROJECT_DIR$/apisport/event/migrations/0006_alter_event_event_type.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/event/migrations/0007_userfavoriteevents.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/event/migrations/0008_alter_userfavoriteevents_unique_together_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/media/images/event_pic.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/user/migrations/0018_rename_deleted_user_is_deleted.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apisport/apisport/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/apisport/apisport/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apisport/apisport/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apisport/apisport/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apisport/event/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/apisport/event/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apisport/event/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apisport/event/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apisport/event/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/apisport/event/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apisport/event/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apisport/event/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apisport/event/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apisport/event/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apisport/user/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/apisport/user/api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apisport/user/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apisport/user/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apisport/user/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/apisport/user/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apisport/user/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apisport/user/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apisport/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apisport/user/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +39,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;MrLiquidd&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/MrLiquidd/sport_app_back_django.git&quot;,
+    &quot;accountId&quot;: &quot;bebb6f5c-aa35-4d53-855e-d8bc2ce1424a&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -82,15 +62,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "run.code.analysis.last.selected.profile": "aDefault",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/apisport/media" />
@@ -114,9 +94,39 @@
       <option name="presentableId" value="Default" />
       <updated>1714482131574</updated>
     </task>
+    <task id="LOCAL-00001" summary="commit message">
+      <option name="closed" value="true" />
+      <created>1717566506625</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1717566506625</updated>
+    </task>
+    <task id="LOCAL-00002" summary="commit message">
+      <option name="closed" value="true" />
+      <created>1717566567265</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1717566567265</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="commit message" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit message" />
   </component>
 </project>
