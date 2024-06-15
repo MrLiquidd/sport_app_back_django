@@ -73,8 +73,7 @@ class UserInfo(models.Model):
     last_name = models.CharField(max_length=30, blank=True, default='')
     about_me = models.TextField(max_length=150, blank=True, default='')
     age = models.IntegerField(default=0, null=True, blank=True)
-    photo_id = models.ForeignKey(File, related_name='file_user_photo_id', on_delete=models.PROTECT, blank=True,
-                                 default='3b94b662-3ecf-46cf-9b63-82ab0f12ce72')
+    photo_id = models.ForeignKey(File, related_name='file_user_photo_id', on_delete=models.PROTECT, blank=True)
     city = models.ForeignKey(City, related_name='user_city', on_delete=models.CASCADE, blank=True,
                              default='9f39b0d5-c4a2-46f8-8005-781a187ac29d')
     deleted = models.BooleanField(default=False)
@@ -102,6 +101,9 @@ class Friends(models.Model):
     friend_id = models.ForeignKey(User, related_name='friend_id_friends', on_delete=models.PROTECT)
     create_date = models.DateTimeField(auto_now_add=True)
     deleted = models.BooleanField()
+
+    def __str__(self):
+        return f"{self.user_id} - {self.friend_id} ({'Deleted' if self.deleted else 'Active'})"
 
 
 class Chat(models.Model):

@@ -1,20 +1,44 @@
+import base64
+
 from django.contrib.auth import get_user_model
 from django.http import JsonResponse
-from rest_framework import status
+from rest_framework import status, generics
+from rest_framework.exceptions import ParseError
+from rest_framework.parsers import BaseParser, JSONParser
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from rest_framework_simplejwt.exceptions import AuthenticationFailed
-from rest_framework_simplejwt.tokens import AccessToken, RefreshToken
 from rest_framework_simplejwt.views import TokenObtainPairView
+from django.core.files.base import ContentFile
+from django.db.models import Q
 
-from .models import UserInfo, User
+from .models import UserInfo, Friends, User
 from .serializers import UserInfoSerializer, UpdateGenderSerializer, UpdateMobileSerializer, UpdateBornDateSerializer, \
-    ChangePasswordSerializer, CustomTokenObtainPairSerializer
+    ChangePasswordSerializer, CustomTokenObtainPairSerializer, UserModelSerializer
+
+
+class Base64ImageParser(BaseParser):
+    """
+    Парсер для обработки изображений в формате base64.
+    """
+
+    media_type = 'image/*'
+
+    def parse(self, stream, media_type=None, parser_context=None):
+        """
+        Преобразует данные изображения в формате base64 в объект ContentFile.
+        """
+        try:
+            decoded_data = base64.b64decode(stream.read())
+        except ValueError:
+            raise ParseError('Некорректные данные изображения в формате base64.')
+
+        return ContentFile(decoded_data)
 
 
 class CustomTokenObtainPairView(TokenObtainPairView):
     serializer_class = CustomTokenObtainPairSerializer
+
 
 class UserInfoDetail(APIView):
     def get(self, request, user_id):
@@ -24,6 +48,27 @@ class UserInfoDetail(APIView):
             return JsonResponse(serializer.data)
         except UserInfo.DoesNotExist:
             return Response({'error': 'UserInfo not found'}, status=404)
+
+
+class UserInfoUpdateAPIView(APIView):
+    parser_classes = [JSONParser, Base64ImageParser]
+
+    def put(self, request, *args, **kwargs):
+        user_info = request.user.userinfo  # Получаем информацию о пользователе через аутентифицированного пользователя
+        print(request.data)
+        serializer = UserInfoSerializer(user_info, data=request.data.get('profileData'))
+        if serializer.is_valid():
+            serializer.save()
+
+            photo_data = request.data.get('profileData').get('photo')
+            if photo_data:
+                image_data = photo_data.split(';base64,')[-1]
+                image_file = ContentFile(base64.b64decode(image_data), name='photo.jpg')
+                user_info.photo_id.photo = image_file
+                user_info.photo_id.save()
+
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class UpdateMobileView(APIView):
@@ -90,3 +135,63 @@ class SoftDeleteUserView(APIView):
         user.save()
 
         return Response({'status': True}, status=status.HTTP_200_OK)
+
+
+class FriendsInfoView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, user_id):
+        # Найти друзей пользователя
+        friends = Friends.objects.filter(
+            Q(user_id=user_id) | Q(friend_id=user_id),
+            deleted=False
+        ).select_related('user_id', 'friend_id')
+
+        # Список для хранения информации о друзьях
+        friends_info = []
+
+        for friend in friends:
+            friend_user = friend.friend_id if friend.user_id.id == user_id else friend.user_id
+            try:
+                user_info = UserInfo.objects.select_related('photo_id').get(user_id=friend_user.id)
+                serializer = UserInfoSerializer(user_info)
+                friends_info.append(serializer.data)
+            except UserInfo.DoesNotExist:
+                continue
+
+        return JsonResponse(friends_info, safe=False)
+
+
+class FriendsSearchView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        query = request.query_params.get('query', '')
+        if not query:
+            return Response({"error": "Query parameter 'query' is required"}, status=400)
+
+        users = User.objects.filter(
+            Q(email__icontains=query) |
+            Q(username__icontains=query) |
+            Q(mobile__icontains=query)
+        )
+
+        user_infos = UserInfo.objects.filter(
+            Q(first_name__icontains=query) |
+            Q(last_name__icontains=query)
+        ).select_related('user_id')
+
+        # Собрать ID пользователей из UserInfo для объединения результатов
+        user_info_user_ids = [user_info.user_id.id for user_info in user_infos]
+
+        # Объединить результаты из User и UserInfo
+        final_users = users | User.objects.filter(id__in=user_info_user_ids)
+
+        # Сериализовать данные пользователей
+        user_serializer = UserModelSerializer(final_users, many=True)
+        user_info_serializer = UserInfoSerializer(user_infos, many=True)
+
+        return JsonResponse({
+            # "users": user_serializer.data,
+            "user_infos": user_info_serializer.data
+        })

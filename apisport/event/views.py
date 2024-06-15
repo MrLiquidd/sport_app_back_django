@@ -1,9 +1,10 @@
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
-from rest_framework import generics, status
+from django.views import View
+from rest_framework import generics, status, filters
 from rest_framework.decorators import api_view
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
-from django.db.models import Count, Prefetch
+from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated
+from django.db.models import Count, Prefetch, Q
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
@@ -16,6 +17,16 @@ class EventListView(generics.ListAPIView):
     queryset = Event.objects.annotate(user_count=Count('event_visit__user_id'))
     serializer_class = EventSerializer
     permission_classes = (IsAuthenticatedOrReadOnly,)
+
+
+class EventListAllView(APIView):
+    serializer_class = EventSerializer
+    permission_classes = (IsAuthenticatedOrReadOnly,)
+
+    def get(self, request, *args, **kwargs):
+        events = Event.objects.annotate(user_count=Count('event_visit__user_id'))
+        serializer = EventSerializer(events, many=True)
+        return JsonResponse(serializer.data, safe=False)
 
 
 class EventDetailView(APIView):
@@ -31,22 +42,22 @@ class EventDetailView(APIView):
             return Response({'error': 'Event not found'}, status=404)
 
 
-class EventGamesView(generics.ListAPIView):
-    queryset = Event.objects.annotate(user_count=Count('event_visit__user_id'))
-    serializer_class = EventSerializer
+class EventGamesView(View):
     permission_classes = (IsAuthenticatedOrReadOnly,)
 
-    def get_queryset(self):
-        return Event.objects.filter(event_type=Event.GAME)
+    def get(self, request, *args, **kwargs):
+        queryset = Event.objects.filter(event_type=Event.GAME).annotate(user_count=Count('event_visit__user_id'))
+        serialized_data = EventSerializer(queryset, many=True).data
+        return JsonResponse({'events': serialized_data})
 
 
-class EventTrainingsView(generics.ListAPIView):
-    queryset = Event.objects.annotate(user_count=Count('event_visit__user_id'))
-    serializer_class = EventSerializer
+class EventTrainingsView(View):
     permission_classes = (IsAuthenticatedOrReadOnly,)
 
-    def get_queryset(self):
-        return Event.objects.filter(event_type=Event.TRAINING)
+    def get(self, request, *args, **kwargs):
+        queryset = Event.objects.filter(event_type=Event.TRAINING).annotate(user_count=Count('event_visit__user_id'))
+        serialized_data = EventSerializer(queryset, many=True).data
+        return JsonResponse({'events': serialized_data})
 
 
 class RecentEventsView(generics.ListAPIView):
@@ -57,6 +68,21 @@ class RecentEventsView(generics.ListAPIView):
         events = Event.objects.annotate(user_count=Count('event_visit__user_id')).order_by('-create_date')[:2]
         serializer = EventSerializer(events, many=True)
         return JsonResponse(serializer.data, safe=False)
+
+
+class SearchEventsView(APIView):
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['title', 'about', 'event_type']
+
+    def get(self, request, *args, **kwargs):
+        queryset = self.get_queryset(request)
+        serializer = EventSerializer(queryset, many=True)
+        return JsonResponse({'events': serializer.data})
+
+    def get_queryset(self, request):
+        queryset = Event.objects.all().annotate(user_count=Count('event_visit__user_id'))
+        search_filter = filters.SearchFilter()
+        return search_filter.filter_queryset(request, queryset, self)
 
 
 @api_view(['GET'])
@@ -95,7 +121,6 @@ def user_events(request, user_id):
         events_data.append(event_data)
 
     return JsonResponse(events_data, safe=False)
-
 
 
 @api_view(['POST'])
@@ -147,7 +172,6 @@ class VisitDeleteView(APIView):
             return Response({'exists': False})
         except Visit.DoesNotExist:
             return Response({'error': 'Visit not found'}, status=status.HTTP_404_NOT_FOUND)
-
 
 
 @api_view(['GET'])

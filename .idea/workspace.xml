@@ -4,21 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d9ba7f87-6c47-4e49-93e1-029aed35cdc5" name="Changes" comment="commit message">
-      <change afterPath="$PROJECT_DIR$/apisport/event/migrations/0006_alter_event_event_type.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/event/migrations/0007_userfavoriteevents.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/event/migrations/0008_alter_userfavoriteevents_unique_together_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/media/images/event_pic.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apisport/user/migrations/0018_rename_deleted_user_is_deleted.py" afterDir="false" />
+    <list default="true" id="d9ba7f87-6c47-4e49-93e1-029aed35cdc5" name="Changes" comment="add somme things">
+      <change afterPath="$PROJECT_DIR$/apisport/media/images/1.-Moraine_final.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/media/images/5b753450-f73.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/media/images/6ff1d249-86b.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/media/images/open-road-leads-grand-tetons-600w-1776070577.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/media/images/photo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/media/images/photo_0nDAJlS.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/media/images/photo_6kanoB7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/media/images/photo_8FlhpDe.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/media/images/photo_HVr0N4x.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/media/images/photo_K17BLOC.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/media/images/photo_cS8Htga.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/media/images/photo_dGOBowS.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/media/images/photo_km2MBsp.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/media/images/photo_sWXzO4O.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/media/images/photo_z8svRoF.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apisport/media/images/vertical-pictures-r93cdchwdse79vvv.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apisport/apisport/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/apisport/apisport/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apisport/apisport/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apisport/apisport/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apisport/event/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/apisport/event/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apisport/event/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apisport/event/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apisport/event/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/apisport/event/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apisport/event/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apisport/event/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apisport/event/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apisport/event/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apisport/user/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/apisport/user/api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apisport/user/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apisport/user/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apisport/user/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/apisport/user/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apisport/user/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apisport/user/urls.py" afterDir="false" />
@@ -110,7 +115,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717566567265</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add somme things">
+      <option name="closed" value="true" />
+      <created>1718139666451</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1718139666451</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -127,6 +140,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="commit message" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit message" />
+    <MESSAGE value="add somme things" />
+    <option name="LAST_COMMIT_MESSAGE" value="add somme things" />
   </component>
 </project>

@@ -7,6 +7,7 @@ from rest_framework_simplejwt.exceptions import AuthenticationFailed
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
 from apisport import settings
+from event.models import Visit
 from .models import User, UserInfo, Friends
 from .utils import send_otp
 
@@ -18,6 +19,7 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
         if user.is_deleted:
             raise AuthenticationFailed('User account is deleted.')
         return data
+
 
 class UserSerializer(serializers.ModelSerializer):
     password1 = serializers.CharField(
@@ -65,24 +67,40 @@ class UserSerializer(serializers.ModelSerializer):
         return user
 
 
+class UserModelSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['id', 'email', 'username', 'mobile', 'gender', 'born_date']
+
 class UserInfoSerializer(serializers.ModelSerializer):
     user = serializers.ReadOnlyField(source="user.id")
     city = serializers.ReadOnlyField(source="city.city")
     photo_id = serializers.SerializerMethodField()
     friends_count = serializers.SerializerMethodField()
+    visits_count = serializers.SerializerMethodField()
 
     class Meta:
         model = UserInfo
         fields = ['id', 'user', 'first_name', 'last_name', 'about_me', 'age', 'photo_id', 'city', 'deleted',
-                  'friends_count']
+                  'friends_count', 'visits_count']
 
     @staticmethod
     def get_friends_count(obj):
         return Friends.objects.filter(user_id=obj.user_id, deleted=False).count()
 
     @staticmethod
+    def get_visits_count(obj):
+        return Visit.objects.filter(user_id=obj.user_id, deleted=False).count()
+
+    @staticmethod
     def get_photo_id(obj):
         return obj.photo_id.photo.name
+
+
+class UserInfoSerializerUpdate(serializers.ModelSerializer):
+    class Meta:
+        model = UserInfo
+        fields = '__all__'
 
 
 class UpdateMobileSerializer(serializers.ModelSerializer):
@@ -112,3 +130,5 @@ class ChangePasswordSerializer(serializers.Serializer):
         if not user.check_password(value):
             raise serializers.ValidationError('Old password is not correct')
         return value
+
+
